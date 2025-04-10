@@ -30,7 +30,6 @@
 
         
 
-
     addActivity(titulo,descripcion,img,id){
         const myActivity1 = new Actividad(titulo,descripcion,img,id);
         this.container.push(myActivity1)
@@ -38,9 +37,16 @@
 
     showActivity(){
         console.log(this.container)
+        
     }
 
+    deleteActivity(id){
+     this.container = this.container.filter((x) => x.id != id)
+    }
 
+    filterActivity(activity){
+        this.container = this.container.filter((x) => x.titulo == activity)
+       }
 
 
     }
@@ -50,10 +56,15 @@
    
     
     newContainer.addActivity("pesca","pescar Peces", "IMG", 1)
-    newContainer.addActivity("pesca2","pescar Peces2", "IMG2", 2)
-    
+    newContainer.addActivity("pesca","pescar Peces2", "IMG2", 2)
+    newContainer.addActivity("correr","lanzar pecar", "IMG2", 7)
+    newContainer.addActivity("pesca2","pescar Peces2", "IMG2", 9)
 
-    newContainer.showActivity()
+    
+// newContainer.deleteActivity(2)
+
 
     
-    
+newContainer.filterActivity("pesca")
+
+newContainer.showActivity()
