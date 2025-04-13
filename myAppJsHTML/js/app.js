@@ -36,30 +36,33 @@
         
     }
 
-    returnActivity(){
-        return this.container
-
-        }
-
     deleteActivity(id){
     this.container = this.container.filter((x) => x.id != id)
     }
 
     filterActivity(activity){
-        return this.container = this.container.filter((x) => x.titulo == activity)
+        const result = this.container = this.container.filter((x) => x.titulo == activity)
+        return result
     }
     }
+
+
 
     const newContainer = new Container() 
 
     
-newContainer.addActivity("pesca","pescar Peces", "IMG", 1)
+newContainer.addActivity("pesca2","pescar Peces", "IMG", 1)
+// newContainer.addActivity("pesca3","pescar Peces", "IMG", 1)
+// newContainer.addActivity("pesca4","pescar Peces", "IMG", 1)
+// newContainer.addActivity("pesca5","pescar Peces", "IMG", 1)
+// newContainer.addActivity("pesca2","pescar Peces", "IMG", 1)
+// newContainer.addActivity("pesca2","pescar Peces", "IMG", 1)
     
 // newContainer.deleteActivity(2)
 
 
     
-// newContainer.filterActivity("pesca")
+newContainer.filterActivity("pesca2")
 
 
 newContainer.showActivity()

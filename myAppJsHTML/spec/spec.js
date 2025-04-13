@@ -15,13 +15,12 @@ describe("Actividad", () => {
 });
 
 
-describe("container debe terner 5 metodos", () =>{
+describe("container debe terner 4 metodos", () =>{
     it("cada una de ellas debe ser una funcion",()=> {
         const container = new Container()
         expect(typeof container.addActivity).toBe("function")
         expect(typeof container.filterActivity).toBe("function")
         expect(typeof container.showActivity).toBe("function")
-        expect(typeof container.returnActivity).toBe("function")
         expect(typeof container.deleteActivity).toBe("function")
 
     })
@@ -48,7 +47,40 @@ describe("filterActivity ",()=>{
         
         const result = container.filterActivity("pesca")
         
-        expect(result).toEqual([{ titulo: 'pesca',descripcion: 'pescar Peces',img: 'IMG',id: 1}])
+        expect(Array.isArray(result)).toBeTrue()
+        expect(result.length).toBe(1)
+        expect(result[0]).toBeInstanceOf(Actividad); 
+        expect(result[0].titulo).toBe("pesca")
     })
 
 })
+
+describe("showActivity debe mostrar un console.log", () => {
+    it("debe llamar a console.log con el contenido de container", () => {
+    const container = new Container();
+    const logSpy = spyOn(console, 'log');
+    container.showActivity();
+    expect(logSpy).toHaveBeenCalledWith(container.container);
+    });
+});
+
+
+describe("deleteActivity debe eliminar una actividad", () => {
+    it("debe eliminar el objeto que tenga el mismo ID", () => {
+        const container = new Container();
+        container.addActivity("pesca", "pescar Peces", "IMG", 1);
+        
+        // Guardamos el tamaño original del contenedor antes de eliminar
+        const originalSize = container.container.length;
+
+        // Llamamos a la función deleteActivity
+        container.deleteActivity(1);
+
+        // Verificamos que el tamaño del array haya disminuido
+        expect(container.container.length).toBe(originalSize - 1);
+
+        // Verificamos que la actividad con el ID 1 haya sido eliminada
+        const deletedActivity = container.container.find(activity => activity.id === 1);
+        expect(deletedActivity).toBeUndefined(); // No debería existir
+    });
+});
