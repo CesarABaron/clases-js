@@ -1,0 +1,23 @@
+.cuadrado1{
+    color: black
+    ;
+    background-color: chartreuse;
+    height: 4vh;
+    width: 30vh;
+    margin-bottom: 1vh;
+}
+
+
+.cuadrado {
+    display: flex;
+    flex-direction: column; /* or row */
+    align-items: center;
+    justify-content: center;
+    background-color: blue;
+    height: 100vh;
+}
+
+
+#titulo{
+font-size: 10vh;
+}

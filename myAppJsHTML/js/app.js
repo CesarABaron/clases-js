@@ -1,14 +1,15 @@
-// console.log("mi primera connecion con js")
+console.log("mi primera connecion con js")
 
 
-// const btn = document.getElementById("btnAlerta")
+const btn = document.getElementById("btnAlerta")
 
-// btn.addEventListener("click", () => {alert("esto eta funcionando")})
+btn.addEventListener("click", () => {alert("esto eta funcionando")})
 
 
-// const mostrarAlerta = () =>{
-//  alert("esta funcionando")
-// }
+const mostrarAlerta = () =>{
+ alert("esta funcionando")
+}
+
 
 
     class Actividad {
