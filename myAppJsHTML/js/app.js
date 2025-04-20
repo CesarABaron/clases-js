@@ -43,40 +43,59 @@ const addActivityhandler = () => {
   const activityValue = document.getElementById("activity").value;
   const descriptionValue = document.getElementById("description").value;
   const linkValue = document.getElementById("link").value;
-  const faltan = document.getElementById("faltanDatos")
+  const faltan = document.getElementById("faltanDatos");
 
   if (validateImput(activityValue, descriptionValue, linkValue) === false) {
-    faltan.innerHTML = "Missing info"
-  } else newContainer.addActivity(
-    activityValue,
-    descriptionValue,
-    linkValue,
-    crypto.randomUUID,
-    faltan.innerHTML = ""
-  );;
+    faltan.innerHTML = "Missing info";
+  } else
+    newContainer.addActivity(
+      activityValue,
+      descriptionValue,
+      linkValue,
+      crypto.randomUUID,
+      (faltan.innerHTML = "")
+    );
 
-showItem() 
+  showItem(activityValue, descriptionValue, linkValue);
 
-
-  console.log("addactivity",newContainer.container[0])
+  // console.log("addactivity1", newContainer.container[0]);
 };
 
+const showItem = (a, b, c) => {
+  const containerActivity = document.querySelector(".newActivity");
+  const actividad = document.createElement("div");
 
+  actividad.classList.add("newBox");
 
-// const showItem = () =>{
-// const newActivity = document.getElementById("NewActivity")
-// const containerActivity = document.querySelector(".newActivity")
-// const actividad = containerActivity.createElement('div')
-// actividad.innerHTML = "hola"
+  containerActivity.appendChild(actividad);
 
-// }
+  // console.log("2",a, b, c);
+
+  actividad.innerHTML = `${a} ${b} ${c}`;
+
+  const deleteButton = document.getElementsByClassName("newBox");
+
+ 
+  deleteButton[0].addEventListener("click", () =>{
+    console.log("aqui", newContainer.container[0].id)
+  })
+
+};
 
 const validateImput = (a, b, c) => {
   if (a == "" || b == "" || c == "") {
     return false;
-    // create a label P to let him know that a part of data is missing
   }
   return true;
 };
 
-module.exports = { Actividad, Container};
+
+
+const deleteActivityHandler = (id) =>{
+   if(newContainer.some(x => x.id)){
+    newContainer.deleteActivity(id)
+   } console.log("deleted")
+
+}
+
+module.exports = { Actividad, Container };
