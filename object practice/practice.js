@@ -1,9 +1,9 @@
-const user = {
-    name: "Cesar",
-    age: 28,
-    city: "Bogotá",
-    job: "Developer"
-  }
+// const user = {
+//     name: "Cesar",
+//     age: 28,
+//     city: "Bogotá",
+//     job: "Developer"
+//   }
 
 
 
@@ -140,13 +140,13 @@ const user = {
 
 
 
-const users = [
-    { name: "Cesar", age: 28, city: "Lima" },
-    { name: "Laura", age: 24, city: "Bogotá" },
-    { name: "Juan", age: 31, city: "México" },
-    { name: "Maria", age: 29, city: "Lima" },
-    { name: "Pedro", age: 27, city: "Santiago" }
-  ]
+// const users = [
+//     { name: "Cesar", age: 28, city: "Lima" },
+//     { name: "Laura", age: 24, city: "Bogotá" }, 
+//     { name: "Juan", age: 31, city: "México" },
+//     { name: "Maria", age: 29, city: "Lima" },
+//     { name: "Pedro", age: 27, city: "Santiago" }
+//   ]
 
 
   //  Devuelve un array solo con los nombres de las personas que vivan en "Lima". 
@@ -186,22 +186,23 @@ const users = [
 
 
 
-const justLima  = users.filter((x)=> x.city === "Lima")
+// const justLima  = users.filter((x)=> x.city === "Lima")
 
 
 
-const deleteAge =  justLima.map(x => {return {name:x.name, age: x.age }})
+// const deleteAge =  justLima.map(x => {return {name:x.name, age: x.age }})
 
 
-console.log(deleteAge)
-// console.log(justLima)
+// console.log(deleteAge)
+
+// // console.log(justLima)
 
 
 
-// Reto 5:
-// → Devuelve un array de strings así:
-// "NOMBRE vive en CITY"
-// Pero solo de personas mayores de 25.
+// // Reto 5:
+// // → Devuelve un array de strings así:
+// // "NOMBRE vive en CITY"
+// // Pero solo de personas mayores de 25.
 
 
 
@@ -210,3 +211,39 @@ console.log(deleteAge)
 // const moreThan25 = users.filter(x => x.city > 25)
 
 // console.log(moreThan25.map(x => `${x.name} vive en {x.city}`))
+
+
+
+// const numbers = [3, 7, 2, 9,5,7,4,333];
+
+
+// const total = numbers.reduce((acc, curr) => {
+//   return acc + curr;
+// }, 0);
+
+// console.log(total)
+
+
+// const validateImput = (a, b, c) => {
+//   if (a == undefined || b == undefined || c == undefined) {
+//     return false
+//     // create a label P to let him know that a part of data is missing
+//   }
+//   return true;
+// };
+
+
+
+// console.log(validateImput("a","a"))
+
+
+const users = [
+  { name: "Cesar", age: 28, city: "Lima" },
+  { name: "Laura", age: 24, city: "Bogotá" },
+  { name: "Juan", age: 31, city: "México" },
+  { name: "Maria", age: 29, city: "Lima" },
+  { name: "Pedro", age: 27, city: "Santiago" }
+]
+
+
+
