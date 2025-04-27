@@ -1,59 +1,49 @@
-import { validateImput,inyectInfo } from "./utils.js"
-import { Container } from "./container.js"
+import { validateImput, inyectInfo } from "./utils.js";
+import { Container } from "./container.js";
 
 const newContainer = new Container();
 
 export class Ui {
-    constructor() {
-        this.newActivity = document.querySelector(".newActivity")
-        this.counter = 0
-    }
+  constructor() {
+    this.newActivity = document.querySelector(".newActivity");
+    this.counter = 0;
+  }
 
-    
+  createDiv() {
 
-    createDiv(){ 
-        const actividad = document.createElement("div")
-        actividad.classList.add("newBox")
-        actividad.id= `actividad-${this.counter}`
+    const actividad = document.createElement("div");
+    actividad.classList.add("newBox");
+    actividad.id = `actividad-${this.counter}`;
 
-        actividad.addEventListener("click", () => {
-            console.log(`Clicked div with id ${actividad.id}`);
-          });
+    this.newActivity.appendChild(actividad);
 
-        this.counter++
-        this.newActivity.appendChild(actividad)
+    actividad.addEventListener("click", () => {
+      this.deleteDiv(actividad.id);
+    });
 
-    }
+    const currentId = actividad.id;
 
+    this.counter++;
 
-    deleteDiv(id){
-        const deleteHandler = document.getElementById(`${id}`)
-        deleteHandler.remove()
-    }
+    return currentId;
+  }
 
+  deleteDiv(id) {
+    const deleteHandler = document.getElementById(`${id}`);
+    deleteHandler.remove();
+  }
 
-    addInformation(){
-        const faltanDat = document.getElementById("faltanDatos")
+  addInformation() {
+    const faltanDat = document.getElementById("faltanDatos");
+    const titulo = document.getElementById("activity").value;
+    const descripcion = document.getElementById("description").value;
+    const img = document.getElementById("link").value;
 
-        const titulo = document.getElementById("activity").value
-        const descripcion = document.getElementById("description").value
-        const img = document.getElementById("link").value
-
-        console.log(titulo,descripcion,img)
-
-        if(validateImput(titulo,descripcion,img) === true){
-            newContainer.addActivity(titulo,descripcion,img,this.counter)
-            this.createDiv();
-            console.log("debe ser este 1",this.counter)
-            inyectInfo(titulo,descripcion,img,`actividad-${this.counter}`)
-            
-            faltanDat.innerHTML = ""
-        } else faltanDat.innerHTML = "Faltan datos"
-
-
-        // el problema radica en que no se esta creando el div primero, y por eso sale null, reparar en la proxima session 
-
-    }
-
-
-} 
+    if (validateImput(titulo, descripcion, img) === true) {
+      const id = this.createDiv();
+      newContainer.addActivity(titulo, descripcion, img, id);
+      faltanDat.innerHTML = "";
+      inyectInfo(titulo, descripcion, img, id);
+    } else faltanDat.innerHTML = "Faltan datos";
+  }
+}

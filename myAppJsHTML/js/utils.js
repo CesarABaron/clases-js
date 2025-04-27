@@ -1,18 +1,15 @@
 export const validateImput = (titulo, descripcion, img) => {
+  console.log("validate se invoco");
 
-    if (titulo == "" || descripcion == "" || img == "") {
-      console.log("no hay info")
-      return false;
-    }
-    console.log("si hay info")
-    return true;
+  if (titulo == "" || descripcion == "" || img == "") {
+    // console.log("no hay info");
+    return false;
   }
+  // console.log("si hay info");
+  return true;
+};
 
-
-
-  export const inyectInfo = (titulo, descripcion, img,id) =>{
-    console.log("debe ser este 2",id)
-    const divActivity = document.getElementById(`${id}`)
-    console.log("debe selecionar el div con el ID pasado por parametro", divActivity)
-    // div.innerHTML = `${titulo} ${descripcion} ${img}`
-  }
+export const inyectInfo = (titulo, descripcion, img, id) => {
+  const divActivity = document.getElementById(`${id}`);
+  divActivity.innerHTML = `${titulo} ${descripcion} ${img}`;
+};
