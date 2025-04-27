@@ -1,23 +1,69 @@
-.cuadrado1{
-    color: black
-    ;
-    background-color: chartreuse;
-    height: 4vh;
-    width: 30vh;
-    margin-bottom: 1vh;
+#title{
+    color: aqua;
+    text-align: center;
+    font-size: 5vh;
+}
+
+#summary{
+    text-align: center;
 }
 
 
-.cuadrado {
+body{
+    background-color: gray;
+}
+
+
+#containerTecnologies{
     display: flex;
-    flex-direction: column; /* or row */
     align-items: center;
+    flex-direction: column;
     justify-content: center;
-    background-color: blue;
-    height: 100vh;
+    background-color:gainsboro;
+}
+
+#imgContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 30vh;
+    width: 80vh;
+    
+}
+
+#formActivities{
+    background-color: aqua;
+    height: 30vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+   
 }
 
 
-#titulo{
-font-size: 10vh;
+#buttonAdd{
+    height: 2vh;
+    width: 15vh;
+    margin-left: 9.5vh;
+    align-self:flex-start
+;
+}
+
+#activity{
+    width: 80vh;
+    height: 2vh;
+}
+
+#description{
+    width: 80vh;
+    height: 10vh;
+    text-align:start;
+  
+}
+
+#link{
+    width: 80vh;
+    height: 2vh;
+   
 }

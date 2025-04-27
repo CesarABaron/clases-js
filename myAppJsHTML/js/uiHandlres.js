@@ -1,7 +1,8 @@
-import { validateImput, inyectInfo } from "./utils.js";
 import { Container } from "./container.js";
+import { validateImput, inyectInfo } from "./utils.js";
 
 const newContainer = new Container();
+
 
 export class Ui {
   constructor() {
@@ -17,16 +18,22 @@ export class Ui {
 
     this.newActivity.appendChild(actividad);
 
-    actividad.addEventListener("click", () => {
+    actividad.addEventListener("click", (event) => {
       this.deleteDiv(actividad.id);
+      newContainer.deleteActivity(currentId)
+      console.log(newContainer)
     });
 
     const currentId = actividad.id;
+
+    console.log(currentId)
 
     this.counter++;
 
     return currentId;
   }
+
+  
 
   deleteDiv(id) {
     const deleteHandler = document.getElementById(`${id}`);

@@ -4,33 +4,45 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="myStyle.css">
   </head>
   <body>
+
+    <h1 id="title">Cesar Baron</h1>
+   
     <div>
-      <p>Resumen</p>
+      <p id="summary">Resumen</p>
     </div>
 
-    <div>
-      <h1>Tecnologias</h1>
-      <div>
-        <div id="html"></div>
-        <div id="css"></div>
-        <div id="js"></div>
+    <div id="containerTecnologies">
+      <h1 id="tecnologias">Tecnologias</h1>
+      <div id="imgContainer">
+        <div id="html">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEc9A_S6BPxCDRp5WjMFEfXrpCu1ya2OO-Lw&s" alt="">
+        </div>
+        <div id="css">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSubsfvX1GCHF8amyfEQxTz7AECFDY-oGMVTg&s" alt="">
+        </div>
+        <div id="js">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuHnJDLOcdm_0b6N6kNj-1OvO9KhKYgqIy0w&s" alt="">
+        </div>
       </div>
     </div>
 
-    <div>
-      <h3>Favorite activity</h3>
+    <div id="formActivities">
+      <h3 id="summary">Favorite activity</h3>
 
-      <input placeholder="Activity" id="activity" type="text" />
-      <input placeholder="description" id="description" type="text" />
-      <input placeholder="Link" id="link" type="text" />
+      <input placeholder=" Activity" id="activity" type="text" />
+      <input placeholder=" Description" id="description" type="text" />
+      <input placeholder=" Link" id="link" type="text" />
 
       <button id="buttonAdd">Agregar Actividad</button>
       <p id="faltanDatos"></p>
+     
     </div>
 
     <div class="newActivity"></div>
     <script type="module" src="./js/app.js"></script>
+    
   </body>
 </html>
