@@ -10,8 +10,10 @@ export const validateImput = (titulo, descripcion, img) => {
     // console.log("no hay info");
     return false;
   }
-  // console.log("si hay info");
+ 
   return true;
+
+
 };
 
 export const inyectInfo = (titulo, descripcion, img, id) => {
@@ -24,12 +26,14 @@ export const inyectInfo = (titulo, descripcion, img, id) => {
   const imageDiv = document.createElement("img")
   imageDiv.src = img
   imageDiv.alt = "Activity Image"
+  imageDiv.classList.add("imgs")
 
 
   newContainer.addActivity(titulo, descripcion, img)
 
   divActivity.appendChild(tituloDiv)
-  divActivity.appendChild(descripcionDiv)
   divActivity.appendChild(imageDiv)
+  divActivity.appendChild(descripcionDiv)
+  
 
 };
